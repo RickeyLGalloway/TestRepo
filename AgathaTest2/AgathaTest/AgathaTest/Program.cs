@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Agatha.Common;
 using Agatha.Common.InversionOfControl;
 using MEDSEEK.eHealth.Apps.Providers.Common;
@@ -15,6 +11,7 @@ namespace AgathaTest
 	{
 		static void Main(string[] args)
 		{
+			//added comment for git testing
 			try
 			{
 				Console.WriteLine("Initialzing Agatha...");
@@ -53,7 +50,7 @@ namespace AgathaTest
 
 				Console.WriteLine("\nError:\n" + ex.Message);
 
-				if(ex.InnerException != null)
+				if (ex.InnerException != null)
 					Console.WriteLine("\n\nInner Error:\n" + ex.InnerException.Message);
 			}
 
@@ -63,8 +60,8 @@ namespace AgathaTest
 			Console.ReadKey();
 		}
 
-		private static void InitializeAgatha() 
-		{ 
+		private static void InitializeAgatha()
+		{
 			new ClientConfiguration(Assembly.GetAssembly(typeof(ListProvidersRequest)), typeof(Agatha.Unity.Container)).Initialize();
 		}
 	}
